@@ -1,0 +1,12 @@
+@startuml
+title Diagrama de Secuencia para calcular el gasto total
+
+test -> ":Casa": getGastoTotal()
+
+loop Componente
+    ":Casa" -> ":Componente": total += getGastoTotal
+end
+
+":Casa" --> test: total
+
+@end

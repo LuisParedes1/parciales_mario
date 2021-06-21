@@ -1,0 +1,18 @@
+@startuml
+title Diagrama Secuencia para descargar una bicicleta en un auto con porta bici.
+
+activate test
+activate "auto:Auto"
+activate "cargaBici:Portador"
+
+test -> "auto:Auto": descargar()
+
+"auto:Auto" ->  "cargaBici:Portador": descargar()
+
+"cargaBici:Portador" -> "cargaBici:Portador": descargar()
+
+"cargaBici:Portador" -> "auto:Auto": bici
+
+"auto:Auto" -> test: bici
+
+@end

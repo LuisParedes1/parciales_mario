@@ -1,0 +1,13 @@
+@startuml
+title Calculo costo Salamadra
+
+":Casa" -> "salamadra:Componente"as Salamadra: getGastoTotal()
+
+loop maderas
+    Salamadra -> ":Madera": total += getGastoTotal(metrosCuadrados)
+end
+
+Salamadra --> ":Casa": total
+
+
+@end

@@ -1,0 +1,14 @@
+@startuml
+title Diagrama de Secuencia Efecto Compuesto
+
+test -> "efectoCompuesto:EfectoCompuesto"as EfectoCompuesto: aplicarA(unaCadena:str)
+
+loop efectos
+    EfectoCompuesto -> ":Efecto": aplicarA(unaCadena:str)
+    ":Efecto" --> EfectoCompuesto: efectoAplicado
+end
+
+EfectoCompuesto --> test: efectoCompuesto
+
+
+@end

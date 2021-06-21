@@ -1,0 +1,38 @@
+@startuml
+title Diagrama de Clase relacion Portador-Carga
+
+abstract class Portador{
+     +{abstract}cargar(Carga carga):void
+     +descargar():Carga
+}
+
+class CargadorBici extends Portador{
+    +cargar(Carga carga):void
+    +cargar(Bici bici):void
+}
+
+class CargadorHelatodo extends Portador{
+    +cargar(Carga carga):void
+    +cargar(Helatodo helatodo):void
+}
+
+
+interface Carga{
+    +{abstract}cargarEn(cargadorBici:CargadorBici):void
+    +{abstract}cargarEn(cargadorHelatodo:CargadorHelatodo):void
+}
+
+class Bici implements Carga{
+    +cargarEn(cargadorBici:CargadorBici):void
+    +cargarEn(cargadorHelatodo:CargadorHelatodo):void
+}
+
+class Helatodo implements Carga{
+    +cargarEn(cargadorBici:CargadorBici):void
+    +cargarEn(cargadorHelatodo:CargadorHelatodo):void
+}
+
+
+Portador *-> Carga: 1          1...*
+
+@end

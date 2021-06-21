@@ -1,0 +1,23 @@
+@startuml
+
+title Relacion Para Efecto Compuesto
+
+interface Efecto{
+    +{abstract}aplicarA(cadena:String):String;
+}
+
+class EfectoAgregarOchoAlFinal implements Efecto{
+    +aplicarA(cadena:String):String;
+}
+
+class EfectoPrimeroMayuscula implements Efecto {
+     +aplicarA(cadena:String):String;
+}
+
+class EfectoPrimeroMayusculaYAgregarOcho implements Efecto {
+     +aplicarA(cadena:String):String;
+}
+
+EfectoPrimeroMayusculaYAgregarOcho *--> Efecto: "1" "2"
+
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+
+class Casa{
+    + agregarComponente(): void
+    + getGastoTotal(): int
+}
+
+interface Componente{
+    + {abstract}getGastoTotal(): int
+}
+
+class LosaRadiante implements Componente{
+    +getGastoTotal(): int
+}
+
+class Estufa implements Componente{
+    +getGastoTotal(): int
+}
+
+class CercoElectrico implements Componente{
+    +getGastoTotal(): int
+}
+
+class Salamadra implements Componente{
+    +getGastoTotal(): int
+}
+
+interface Madera{
+    + {abstract}getGastoTotal(metrosCuadrados:int): int
+    +{abstract}getKg(): int
+}
+
+class Pino implements Madera{
+    + getGastoTotal(metrosCuadrados:int): int
+    + getKg(): int
+}
+
+class Quebracho implements Madera{
+    + getGastoTotal(metrosCuadrados:int): int
+    + getKg(): int
+}
+
+Casa o-> Componente: 1      0...*
+
+Salamadra o--> Madera: "1" "0...*"
+@end

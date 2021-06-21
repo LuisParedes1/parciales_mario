@@ -1,0 +1,21 @@
+@startuml
+title Diagrama de Secuencia testAlAsignarleUnPortadorBiciAlAutoAhoraSiPuedeCargarLaBici
+
+activate test
+activate "auto:Auto"
+activate "cargaBici:Portador"
+activate "bici:Carga"
+
+test->"auto:Auto": cambiarPortador(portadorBici)
+
+"auto:Auto"->"auto:Auto": portador = portadorBici
+
+test->"auto:Auto": cargar(bici)
+
+"auto:Auto" -> "cargaBici:Portador": cargar(bici)
+
+"cargaBici:Portador" -> "bici:Carga": cargarEn(cargaBici)
+
+"bici:Carga" -> "cargaBici:Portador": cargar(bici)
+
+@end

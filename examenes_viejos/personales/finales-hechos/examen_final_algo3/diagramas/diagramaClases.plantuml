@@ -1,0 +1,20 @@
+@startuml
+title Diagrama Clases
+hide Circle
+skinparam classAttributeIconSize 0
+
+class Nueva{
+    + atributo: ClasePerteneciente
+    + metodo(): ClaseDevuelta
+}
+
+
+/'
+*->
+o->
+--> abajo
+-right->
+'/
+
+
+@enduml

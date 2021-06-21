@@ -1,0 +1,32 @@
+@startuml
+title Relacion entre efectos
+
+interface Efecto{
+    +{abstract}aplicarA(cadena:String):String;
+}
+
+class EfectoAgregarCincoAlFinal implements Efecto{
+     +aplicarA(cadena:String):String;
+}
+class EfectoAgregarOchoAlFinal implements Efecto{
+    +aplicarA(cadena:String):String;
+}
+class EfectoDarVueltas implements Efecto{
+     +aplicarA(cadena:String):String;
+}
+
+class EfectoPrimeroMayuscula implements Efecto {
+     +aplicarA(cadena:String):String;
+}
+
+class EfectoPrimeroMayusculaYAgregarOcho implements Efecto {
+     +aplicarA(cadena:String):String;
+}
+
+EfectoPrimeroMayusculaYAgregarOcho *--> Efecto: "1" "2"
+
+class EfectoDarVueltasYPrimeraMayuscula implements Efecto{
+     +aplicarA(cadena:String):String;
+}
+EfectoDarVueltasYPrimeraMayuscula *--> Efecto: "1" "2"
+@enduml
